@@ -40,5 +40,17 @@ describe('Jogo | Unit', () => {
       expect(resultado).to.be.an('object')
       expect(resultado.acertou).to.be.true
     })
+
+  context('Quando perguntar qual número desejar ,não aceitar texto',()=>{
+    it('retornar uma resposta em dados numeros inteiros',()=>{
+      const numeroGerado = 50
+      const resposta= 'string'
+
+      const resultado= jogo(numeroGerado, resposta)
+
+      expect(resultado).to.be.an('object')
+      expect(resultado.mensagemErro).to.be.equal('Não é um número válido')
+    })
+  })  
   })
 })
