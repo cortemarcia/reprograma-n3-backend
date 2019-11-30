@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 const perguntar = () => {
     rl.question('Adivinhe o número secreto: ', resposta => {
-      const resultado = jogo(numeroGerado, resposta)
+      const resultado = jogo(numeroGerado, resposta) 
 
       if (resultado.acertou) {
         console.log('Parabéns! Você acertou.')
