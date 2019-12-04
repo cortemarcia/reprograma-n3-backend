@@ -2,7 +2,6 @@ const { connect } = require('../models/Repository')
 const treinadoresModel = require('../models/TreinadoresSchema')
 const { pokemonsModel } = require('../models/PokemonsSchema')
 const bcrypt = require('bcryptjs')
-
 connect()
 
 const calcularNivel = (inicio, fim, nivelAtual) => {
