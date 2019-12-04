@@ -150,12 +150,28 @@ const treinarPokemon = async (request, response) => {
   })
 }
 
-const getPokemonById = async (request, response) => {
-  const treinadorId = request.body.treinadorId
-  const pokemonId = request.body.pokemonId
-  const treinador = await treinadoresModel.findById(treinadorId)
-  const pokemon = treinador.pokemons.find((pokemon) => {
-    return pokemonId == pokemon._id
+// const getPokemonById = async (request, response) => {
+//   const treinadorId = request.body.treinadorId
+//   const pokemonId = request.body.pokemonId
+//   const treinador = await treinadoresModel.findById(treinadorId)
+//   const pokemon = treinador.pokemons.find((pokemon) => {
+//     return pokemonId == pokemon._id
+const getPokemons = async (request, response) => {
+  const authHeader = request.get('authorization')
+  let autenticado = false
+
+  if (!authHeader) {
+    return response.status(401).send('Você precisa fazer login!')
+  }
+
+  const token = authHeader.split(' ')[1]
+
+  jwt.verify(token, CHAVE_PRIVADA, (error, decoded) => {
+    if (error) {
+      autenticado = false
+    } else {
+      autenticado = true
+    }
   })
 
   if (pokemon) {
@@ -211,5 +227,6 @@ module.exports = {
   treinarPokemon,
   getPokemonById,
   updatePokemon,
+  getPokemons,
   login
 }
