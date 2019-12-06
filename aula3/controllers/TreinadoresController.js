@@ -72,21 +72,21 @@ const addAdmin = (request, response) => {
   })
 }
 
-const login = async (request, response) => {
-  const email = request.body.email
-  const senha = request.body.senha
-  const treinador = await treinadoresModel.findOne({ email })
-    if (!treinador) {
-    return response.status(404).send("Email incorreto")
-  } 
+// const login = async (request, response) => {
+//   const email = request.body.email
+//   const senha = request.body.senha
+//   const treinador = await treinadoresModel.findOne({ email })
+//     if (!treinador) {
+//     return response.status(404).send("Email incorreto")
+//   } 
 
-  const senhaValida = bcrypt.compareSync(senha, treinador.senha)
-    if (senhaValida) {
-      return response.status(200).send('Usuário logado')
-    } else {
-      return response.status(401).send("Senha inválido")
-    }
-}
+//   const senhaValida = bcrypt.compareSync(senha, treinador.senha)
+//     if (senhaValida) {
+//       return response.status(200).send('Usuário logado')
+//     } else {
+//       return response.status(401).send("Senha inválido")
+//     }
+// }
 
 // else{
 //     return response.status(401).send('email inválidos')
@@ -255,6 +255,5 @@ module.exports = {
   getPokemonById,
   updatePokemon,
   getPokemons,
-  getAllPokemons,
   login
 }
