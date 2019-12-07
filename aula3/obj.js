@@ -1,3 +1,4 @@
+// CLASS MÃE
 class Garrafa {
     constructor(marca, cor, tamanho, tipo) {
         this._marca = marca
@@ -24,7 +25,7 @@ class Garrafa {
     }
     
 }
-
+//  CLASS FILHO
 class Carimbo extends Garrafa {
     constructor(marca, cor, tamanho, corDaTinta, medida, qualidade) {
         super(marca, cor, tamanho)
@@ -49,22 +50,25 @@ carimbou.medida= 'grande'
 console.log(carimbou.medida)
 
 
-// carimbou.marca
-// console.log(carimbou.marca)
+// USANDO CLASS CARIMBO
+
+carimbou.marca
+console.log(carimbou.marca)
 carimbou.marca= "Style"
 console.log(carimbou.marca)
 
 
-// const hiperGarrafa = new Garrafa('coii', 'transparente', null)
+// USANDO CLASS HIPERGARRAFA
+const hiperGarrafa = new Garrafa('coii', 'transparente', null)
 
-// hiperGarrafa.marca
-// console.log(hiperGarrafa.marca)
-// // hiperGarrafa.marcaNatura= 'Nabj'
-// // console.log(hiperGarrafa.marcaNatura)
-// // console.log(marcaNatura('Natura'))
+hiperGarrafa.marca
+console.log(hiperGarrafa.marca)
+hiperGarrafa.marcaNatura= 'Nabj'
+console.log(hiperGarrafa.marcaNatura)
+console.log(marcaNatura('Natura'))
 
-// hiperGarrafa.cor
-// console.log(hiperGarrafa.cor)
-// hiperGarrafa.cor = 'Branco'
-// console.log(hiperGarrafa.cor)
+hiperGarrafa.cor
+console.log(hiperGarrafa.cor)
+hiperGarrafa.cor = 'Branco'
+console.log(hiperGarrafa.cor)
 

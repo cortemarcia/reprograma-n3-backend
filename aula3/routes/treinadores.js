@@ -62,17 +62,16 @@ const autenticarAdmin = (request, response, next) => {
   next()
 }
 
-router.get('', autenticar, controller.getAll)
-router.post('', autenticarAdmin, controller.add)
-router.post('/admin', controller.addAdmin)
-router.get('/:id', autenticar, controller.getById)
-router.patch('/:id', autenticar, controller.update)
-router.delete('/:id', autenticar, controller.remove)
-router.post('/:treinadorId/pokemons', autenticar, controller.addPokemon)
-router.patch('/:treinadorId/pokemons/:pokemonId/treinar', autenticar, controller.treinarPokemon)
-router.get('/:id/pokemons', autenticar, controller.getPokemons)
-router.patch('/:treinadorId/pokemons/:pokemonId', autenticar, controller.updatePokemon)
-router.get('/:treinadorId/pokemons/:pokemonId', autenticar, controller.getPokemonById)
+router.get('', controller.getAll)
+router.post('', controller.add)
+router.get('/:id', controller.getById)
+router.patch('/:id', controller.update)
+router.delete('/:id', controller.remove)
+router.post('/:treinadorId/pokemons', controller.addPokemon)
+router.patch('/:treinadorId/pokemons/:pokemonId/treinar', controller.treinarPokemon)
+router.get('/:id/pokemons', controller.getPokemons)
+router.patch('/:treinadorId/pokemons/:pokemonId', controller.updatePokemon)
+// router.get('/:treinadorId/pokemons/:pokemonId', controller.getPokemonById)
 router.post('/login', controller.login)
 
 module.exports = router
